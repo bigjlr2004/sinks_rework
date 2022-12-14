@@ -15,5 +15,82 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "plumbers": [
+    {
+      "id": 1,
+      "name": "John"
+    },
+    {
+      "id": 2,
+      "name": "Maude"
+    },
+    {
+      "id": 3,
+      "name": "Merle"
+    }
+  ],
+  "completions": [
+    {
+      "requestId": 2,
+      "plumberId": "1",
+      "id": 1
+    },
+    {
+      "requestId": 6,
+      "plumberId": 1,
+      "id": 4
+    }
+  ],
+  "requests": [
+    {
+      "id": 2,
+      "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
+      "address": "34445 Bianka Ports",
+      "budget": 400,
+      "neededBy": "2021-08-27"
+    },
+    {
+      "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
+      "address": "567 test lane",
+      "budget": "999",
+      "neededBy": "2022-12-24",
+      "id": 6
+    },
+    {
+      "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
+      "address": "3456 there",
+      "budget": "789",
+      "neededBy": "2022-12-17",
+      "id": 7
+    },
+    {
+      "description": "These last requests aren't formatted correctly",
+      "address": "CSS Sucks ",
+      "budget": "456",
+      "neededBy": "2023-01-07",
+      "id": 9
+    },
+    {
+      "description": "wakkka wakkka wakkka ",
+      "address": "",
+      "budget": "",
+      "neededBy": "",
+      "id": 11
+    },
+    {
+      "description": "My faucet is leaking",
+      "address": "311 North Morrow",
+      "budget": "3456",
+      "neededBy": "2022-12-24",
+      "id": 12
+    },
+    {
+      "description": "John was here nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+      "address": "",
+      "budget": "",
+      "neededBy": "",
+      "id": 13
+    }
+  ]
 }

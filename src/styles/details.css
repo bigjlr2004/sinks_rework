@@ -1,0 +1,61 @@
+.field {
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: rgb(55, 6, 203);
+    color: lightgoldenrodyellow;
+    
+}
+.label {
+    font-size: 1.25em;
+}
+.completion_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: pink;
+    
+}
+.request_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.field, .request_row, .completion_row, .request_header {
+    width: 800px;
+    padding-left: .5em;
+}
+.request_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkslategrey;
+    color: antiquewhite;
+    
+    padding-top: .5em;
+    padding-bottom: .5em;
+    
+    
+}
+.completed_by_header {
+    padding-right: 7em;
+}
+
+#myul li:nth-child(odd) {
+    background-color: white;
+}
+#myul li:nth-child(even) {
+    background-color: lightgray;
+}
+.serviceRequests {
+    width: 808px;
+    border: .1px dashed rgb(96, 94, 94);
+}
+
+#test{
+  width: 75%;
+}
