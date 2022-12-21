@@ -13,7 +13,14 @@
       "name": "Merle"
     }
   ],
-  "completions": [],
+  "completions": [
+    {
+      "plumberId": 1,
+      "requestId": 3,
+      "dateCompleted": 1671660734213,
+      "id": 2
+    }
+  ],
   "requests": [
     {
       "id": 1,
@@ -35,13 +42,6 @@
       "budget": "500",
       "neededBy": "2022-12-30",
       "id": 3
-    },
-    {
-      "description": "Same ",
-      "address": "SAme",
-      "budget": "5",
-      "neededBy": "2022-12-23",
-      "id": 4
     }
   ]
 }
