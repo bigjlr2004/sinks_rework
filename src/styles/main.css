@@ -1,5 +1,5 @@
-@import "details.css";
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import "details.css";
 
 /*Typography
 --------------------------------------------------------------*/
@@ -19,13 +19,3 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 2px;
 }
 
-li {
-	list-style: none;
-	margin: 0;
-	width: 60vh;
-	padding: 2px;
-}
-ul {
-	
-	padding: 0;
-}

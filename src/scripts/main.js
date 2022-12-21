@@ -1,24 +1,20 @@
-import { fetchRequests,fetchPlumbers, fetchCompletions } from "./dataAccess.js"
 import { SinkRepair } from "./SinkRepair.js"
+import { fetchData } from "./dataAccess.js"
 
 
 const mainContainer = document.querySelector("#container")
 
+mainContainer.addEventListener( "stateChanged", customEvent => {render()})
+
 const render = () => {
-    fetchRequests()
-        .then(() => fetchPlumbers())
-        .then(() => fetchCompletions())
-        .then(
-            () => {
-                mainContainer.innerHTML = SinkRepair()
-            }
-        )
+    fetchData("requests"). then(() => 
+    fetchData("plumbers")).then(() => 
+    fetchData("completions")).then(() => {
+            mainContainer.innerHTML = SinkRepair()
+        }
+    )
+  
 }
 
 render()
-
-mainContainer.addEventListener("stateChanged", event => {
-    console.log("State of data has changed. Regenerating HTML...")
-    render()
-})
 
