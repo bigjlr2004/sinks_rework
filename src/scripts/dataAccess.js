@@ -1,85 +1,40 @@
+const mainContainer = document.querySelector("#container")
 const applicationState = {
-    requests:[],
-    plumbers:[],
-    completions: []
+
 }
 
 const API = "http://localhost:8088"
 
-export const fetchRequests = () => {
-    return fetch(`${API}/requests`)
+export const fetchData = (data) => {
+    return fetch(`${API}/${data}`)
         .then(response => response.json())
         .then(
-            (serviceRequests) => {
+            (dataReturned) => {
                 // Store the external state in application state
-                applicationState.requests = serviceRequests
-            }
-        )
-        
-}
-export const fetchPlumbers = () => {
-    return fetch(`${API}/plumbers`)
-        .then(response => response.json())
-        .then(
-            (data) => {
-                applicationState.plumbers = data
+                applicationState[data] = dataReturned
             }
         )
 }
-export const fetchCompletions = () => {
-    return fetch(`${API}/completions`)
-        .then(response => response.json())
-        .then(
-            (data) => {
-                applicationState.completions = data
-            }
-        )
+export const getData = (data) => {
+   return applicationState[data].map(arr =>({...arr}))
 }
-const mainContainer = document.querySelector("#container")
 
-export const sendRequest = (userServiceRequest) => {
+export const sendData = (data, where) => {
     const fetchOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(userServiceRequest)
+        body: JSON.stringify(data)
     }
-    return fetch(`${API}/requests`, fetchOptions)
-    .then(response => response.json())
-    .then(() => {
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-    })
-}
+   
 
-export const sendCompletion = (completionObj) => {
-    const fetchOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(completionObj)
-    }
-    return fetch(`${API}/completions`, fetchOptions)
-    .then(response => response.json())
-    .then(() => {
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-    })
+    return fetch(`${API}/${where}`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+                mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+        })
 }
-
-/* define and export a function names getRequests that returns a copy
-/ of the requests state */
-export const getRequests = () => {
-    return applicationState.requests.map((req) => ({ ...req }));
-};
-export const getPlumbers = () => {
-    return applicationState.plumbers.map((plumber)=> ({...plumber }))
-}
-
-export const getCompletions = () => {
-    return applicationState.completions.map((completion)=> ({...completion }))
-}
-
 export const deleteRequest = (id) => {
     return fetch(`${API}/requests/${id}`, { method: "DELETE" })
         .then(
@@ -88,4 +43,3 @@ export const deleteRequest = (id) => {
             }
         )
 }
-
