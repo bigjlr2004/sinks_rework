@@ -14,3 +14,31 @@
 .label {
     font-size: 1.25em;
 }
+
+ul {
+    padding: 0; /*removes default padding from unordered list*/
+}
+
+.request-row {
+    width: 900px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between; /* aligns item at either end of the row*/
+    
+}
+
+.request-ul li:nth-child(odd) {
+    background-color: white;
+}
+.request-ul li:nth-child(even) {
+    background-color: lightgray;
+}
+
+#completion {
+    background-color: rgb(65, 89, 248);
+    color: white;
+}
+.description {
+    width:  75%;
+}
+
